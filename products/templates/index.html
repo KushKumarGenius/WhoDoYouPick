@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>The ones you know you'll never have a future with. Celebs.</h1>
+<h2>Who's the hottest?</h2>
+<div class="row">
+    {% for product in products %}
+     <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src = "{{ product.image_url }}" alt="nope">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">Age: {{ product.price }}</p>
+                <p class="card-text">Net Worth: {{ product.stock }}</p>
+                <a href="https://docs.google.com/document/d/1oT4k-pFAWjPsDfXxhZQru6E5DI0EPW3j7JXz6WwlSHc/edit">
+                    <button id="myBtn" type = "button">YES!</button>
+                </a>
+
+                <script>
+                    const myBtn = document.getElementById("myBtn");
+
+                    myBtn.addEventListener("click", function(e) {
+                        console.log("clicked")
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
